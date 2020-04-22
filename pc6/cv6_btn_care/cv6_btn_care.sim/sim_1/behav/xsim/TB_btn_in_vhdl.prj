@@ -1,0 +1,11 @@
+# compile vhdl design source files
+vhdl xil_defaultlib  \
+"../../../../cv6_btn_care.srcs/sources_1/imports/SOURCES/btn_in.vhd" \
+"../../../../cv6_btn_care.srcs/sources_1/imports/SOURCES/ce_gen.vhd" \
+"../../../../cv6_btn_care.srcs/sources_1/imports/SOURCES/btn_in/debouncer.vhd" \
+"../../../../cv6_btn_care.srcs/sources_1/imports/SOURCES/btn_in/edge_detector.vhd" \
+"../../../../cv6_btn_care.srcs/sources_1/imports/SOURCES/btn_in/sync_reg.vhd" \
+"../../../../cv6_btn_care.srcs/sources_1/imports/SOURCES/TB_btn_in.vhd" \
+
+# Do not sort compile order
+nosort

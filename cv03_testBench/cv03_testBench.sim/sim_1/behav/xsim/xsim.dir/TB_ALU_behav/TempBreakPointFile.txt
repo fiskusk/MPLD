@@ -1,0 +1,3 @@
+Breakpoint File Version 1.0
+98 true C:/Users/Uzivatel/Documents/_skola/cv03_testBench/cv03_testBench.srcs/sim_1/new/TB_ALU.vhd
+78 true C:/Users/Uzivatel/Documents/_skola/cv03_testBench/cv03_testBench.srcs/sim_1/new/TB_ALU.vhd

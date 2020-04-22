@@ -1,0 +1,18 @@
+#-----------------------------------------------------------
+# Vivado v2019.2.1 (64-bit)
+# SW Build 2729669 on Thu Dec  5 04:49:17 MST 2019
+# IP Build 2729494 on Thu Dec  5 07:38:25 MST 2019
+# Start of session at: Tue Feb 18 14:15:00 2020
+# Process ID: 5708
+# Current directory: d:/Documents/xklapi02/cv03_testBench
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent1620 D:\Documents\xklapi02\cv03_testBench\cv03_testBench.xpr
+# Log file: d:/Documents/xklapi02/cv03_testBench/vivado.log
+# Journal file: d:/Documents/xklapi02/cv03_testBench\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project D:/Documents/xklapi02/cv03_testBench/cv03_testBench.xpr
+update_compile_order -fileset sources_1
+launch_simulation
+source TB_ALU.tcl
+run all
+relaunch_sim
