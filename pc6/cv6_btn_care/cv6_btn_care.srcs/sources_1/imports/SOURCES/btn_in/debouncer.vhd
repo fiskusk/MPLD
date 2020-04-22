@@ -18,7 +18,8 @@ END debouncer;
 ARCHITECTURE Behavioral OF debouncer IS
 ----------------------------------------------------------------------------------
 
-signal sample_count : integer := 0;
+signal s_sample_count   : integer   := 0;
+signal s_btn_o          : std_logic := '0';
 
 ----------------------------------------------------------------------------------
 BEGIN
@@ -27,21 +28,23 @@ BEGIN
   debounce: PROCESS (clk) BEGIN
     if rising_edge (clk) then
       if ce = '1' then
-        if sample_count < (DEB_PERIOD - 1) then
+        if s_sample_count < (DEB_PERIOD - 1) then
           if btn_i = '1' then
-            sample_count <= sample_count + 1;
+            s_sample_count <= s_sample_count + 1;
           else
-            sample_count <= 0;
+            s_sample_count <= 0;
           end if;
-        elsif sample_count = (DEB_PERIOD - 1) then
-          sample_count <= 0;
-          btn_o <= '1';
+        elsif s_sample_count = (DEB_PERIOD - 1) then
+          s_sample_count <= 0;
+          s_btn_o <= '1';
         else
-          btn_o <= '0';
+          s_btn_o <= '0';
         end if;
       end if;
     end if;
   end process debounce;
+
+  btn_o <= s_btn_o;
 
 ----------------------------------------------------------------------------------
 END Behavioral;
