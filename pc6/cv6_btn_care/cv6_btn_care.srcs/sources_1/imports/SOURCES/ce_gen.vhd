@@ -78,7 +78,7 @@ begin  -- architecture clock_divider_arch
     -- type   : sequential
     output_division : process (clk) is
     begin  -- process output_division
-      if falling_edge(clk) then        -- falling clock edge
+      if rising_edge(clk) then        -- falling clock edge
         if srst = '1' then              -- synchronous reset (active high)
           cnt_d <= (others => '0');
           ce_o  <= '0';
