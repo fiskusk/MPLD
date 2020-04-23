@@ -84,10 +84,10 @@
 !*.elf
 !*.bmm
 !*.xmp
-pc6/cv6_btn_care/cv6_btn_care.xpr
-pc6/cv6_btn_care/TB_btn_in_behav.wcfg
-pc6/cv6_btn_care/cv6_btn_care.sim/sim_1/behav/xsim/xelab.pb
-pc6/cv6_btn_care/cv6_btn_care.sim/sim_1/behav/xsim/xsim.dir/TB_btn_in_behav/TempBreakPointFile.txt
-pc6/cv6_btn_care/cv6_btn_care.sim/sim_1/behav/xsim/xsim.dir/TB_btn_in_behav/xsim.mem
-pc6/cv6_btn_care/cv6_btn_care.sim/sim_1/behav/xsim/xsim.dir/TB_btn_in_behav/obj/xsim_1.c
-pc6/cv6_btn_care/cv6_btn_care.sim/sim_1/behav/xsim/xsim.dir/TB_btn_in_behav/webtalk/xsim_webtalk.tcl
+*.xpr
+*.wcfg
+*.pb
+*.txt
+*.mem
+*\xsim_1.c
+*.tcl
