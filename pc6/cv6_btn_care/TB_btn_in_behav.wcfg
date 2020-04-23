@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="TB_btn_in_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="TB_btn_in" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="816562fs"></ZoomStartTime>
+      <ZoomEndTime time="2607196fs"></ZoomEndTime>
+      <Cursor1Time time="1315000fs"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="114"></NameColumnWidth>
+      <ValueColumnWidth column_width="72"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="8" />
+   <wave_markers>
+      <marker time="1115000" label="" />
+      <marker time="1215000" label="" />
+   </wave_markers>
+   <wvobject fp_name="/TB_btn_in/clk" type="logic">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TB_btn_in/ce" type="logic">
+      <obj_property name="ElementShortName">ce</obj_property>
+      <obj_property name="ObjectShortName">ce</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TB_btn_in/btn_i" type="logic">
+      <obj_property name="ElementShortName">btn_i</obj_property>
+      <obj_property name="ObjectShortName">btn_i</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TB_btn_in/btn_deb_o" type="logic">
+      <obj_property name="ElementShortName">btn_deb_o</obj_property>
+      <obj_property name="ObjectShortName">btn_deb_o</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TB_btn_in/btn_posedge_o" type="logic">
+      <obj_property name="ElementShortName">btn_posedge_o</obj_property>
+      <obj_property name="ObjectShortName">btn_posedge_o</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TB_btn_in/btn_negedge_o" type="logic">
+      <obj_property name="ElementShortName">btn_negedge_o</obj_property>
+      <obj_property name="ObjectShortName">btn_negedge_o</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TB_btn_in/btn_edge_o" type="logic">
+      <obj_property name="ElementShortName">btn_edge_o</obj_property>
+      <obj_property name="ObjectShortName">btn_edge_o</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TB_btn_in/clk_period" type="other">
+      <obj_property name="ElementShortName">clk_period</obj_property>
+      <obj_property name="ObjectShortName">clk_period</obj_property>
+   </wvobject>
+</wave_config>

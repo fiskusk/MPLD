@@ -67,7 +67,7 @@ BEGIN
 
   UUT : btn_in
   GENERIC MAP(
-    DEB_PERIOD          => 3
+    DEB_PERIOD          => 5
   )
   PORT MAP(
     clk                 => clk,

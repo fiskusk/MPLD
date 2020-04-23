@@ -1,1 +1,2 @@
 Breakpoint File Version 1.0
+35 true C:/Users/Uzivatel/Documents/_skola/MPLD/pc6/cv6_btn_care/cv6_btn_care.srcs/sources_1/imports/SOURCES/btn_in/debouncer.vhd

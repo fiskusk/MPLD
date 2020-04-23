@@ -18,33 +18,33 @@ END debouncer;
 ARCHITECTURE Behavioral OF debouncer IS
 ----------------------------------------------------------------------------------
 
-signal s_sample_count   : integer   := 0;
-signal s_btn_o          : std_logic := '0';
+signal s_btn_debounced  : std_logic := '0';
+
 
 ----------------------------------------------------------------------------------
 BEGIN
 ----------------------------------------------------------------------------------
 
-  debounce: PROCESS (clk) BEGIN
+  debounce: PROCESS (clk) 
+    constant c_btn_pressed_mask   : std_logic_vector(DEB_PERIOD-1 downto 0) := (others => '1');
+    constant c_btn_released_mask  : std_logic_vector(DEB_PERIOD-1 downto 0) := (others => '0');
+    variable v_btn_buff           : std_logic_vector(DEB_PERIOD-1 downto 0) := (others => '0');
+  BEGIN
     if rising_edge (clk) then
       if ce = '1' then
-        if s_sample_count < (DEB_PERIOD - 1) then
-          if btn_i = '1' then
-            s_sample_count <= s_sample_count + 1;
-          else
-            s_sample_count <= 0;
-          end if;
-        elsif s_sample_count = (DEB_PERIOD - 1) then
-          s_sample_count <= 0;
-          s_btn_o <= '1';
+        v_btn_buff := v_btn_buff(v_btn_buff'HIGH - 1 downto 0) & btn_i;
+        if v_btn_buff = c_btn_pressed_mask then
+          s_btn_debounced <= '1';
+        elsif v_btn_buff = c_btn_released_mask then
+          s_btn_debounced <= '0';
         else
-          s_btn_o <= '0';
+          s_btn_debounced <= s_btn_debounced;
         end if;
       end if;
     end if;
   end process debounce;
 
-  btn_o <= s_btn_o;
+  btn_o <= s_btn_debounced;
 
 ----------------------------------------------------------------------------------
 END Behavioral;
