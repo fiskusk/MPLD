@@ -93,7 +93,7 @@ begin
       btn_negedge_o => s_btn_negedge(i),
       btn_edge_o    => s_btn_edge(i)
     );
-    END GENERATE gen_btn_in;
+  END GENERATE gen_btn_in;
 
   UUT : stopwatch_FSM
   PORT MAP(

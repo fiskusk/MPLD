@@ -121,6 +121,11 @@ ARCHITECTURE Structural OF TOP IS
   SIGNAL dig_3_i            : STD_LOGIC_VECTOR (3 DOWNTO 0);
   SIGNAL dig_4_i            : STD_LOGIC_VECTOR (3 DOWNTO 0);
 
+  signal s_btn_deb          : STD_LOGIC_VECTOR (1 downto 0);
+  signal s_btn_posedge      : STD_LOGIC_VECTOR (1 downto 0);
+  signal s_btn_negedge      : STD_LOGIC_VECTOR (1 downto 0);
+  signal s_btn_edge         : STD_LOGIC_VECTOR (1 downto 0);
+
   SIGNAL cnt_reset          : STD_LOGIC;
   SIGNAL cnt_enable         : STD_LOGIC;
   SIGNAL disp_enable        : STD_LOGIC;
@@ -142,31 +147,33 @@ BEGIN
 
   --------------------------------------------------------------------------------
 
---btn_in_i : btn_in
---GENERIC MAP(
---  DEB_PERIOD          => 
---)
---PORT MAP(
---  clk                 => ,
---  ce                  => ,
---  btn_i               => ,
---  btn_deb_o           => ,
---  btn_posedge_o       => ,
---  btn_negedge_o       => ,
---  btn_edge_o          => 
---);
+  gen_btn_in : FOR i IN 0 TO 1 GENERATE
+    btn_in_inst: btn_in 
+    GENERIC MAP(
+      DEB_PERIOD      => 10
+    )
+    PORT MAP(
+      clk           => clk,
+      ce            => clk_en_100Hz,
+      btn_i         => btn_i(i),
+      btn_deb_o     => s_btn_deb(i),
+      btn_posedge_o => s_btn_posedge(i),
+      btn_negedge_o => s_btn_negedge(i),
+      btn_edge_o    => s_btn_edge(i)
+    );
+  END GENERATE gen_btn_in;
 
   --------------------------------------------------------------------------------
 
---StopWatch_control_FSM_i : stopwatch_FSM
---PORT MAP(
---  clk                 => ,
---  Btn_S_i             => ,
---  Btn_L_i             => ,
---  cnt_reset           => ,
---  cnt_enable          => ,
---  disp_enable         => 
---);
+  StopWatch_control_FSM_i : stopwatch_FSM
+  PORT MAP(
+    clk                 => clk,
+    Btn_S_i             => s_btn_posedge(0),
+    Btn_L_i             => s_btn_posedge(1),
+    cnt_reset           => cnt_reset,
+    cnt_enable          => cnt_enable,
+    disp_enable         => disp_enable
+  );
 
   --------------------------------------------------------------------------------
 
