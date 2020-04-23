@@ -75,7 +75,7 @@ begin
 
     btn_i(0) <= '1';
     btn_i(1) <= '0';
-    WAIT FOR 30ms;   -- RUN - počita to 
+    WAIT FOR 30ms;   -- RUN - pocita to 
 
     btn_i(0) <= '0';
     btn_i(1) <= '0';
@@ -115,7 +115,7 @@ begin
 
     btn_i(0) <= '1';
     btn_i(1) <= '0';
-    WAIT FOR 30ms;   -- zpět na RUN
+    WAIT FOR 30ms;   -- zpet na RUN
 
     btn_i(0) <= '0';
     btn_i(1) <= '0';
