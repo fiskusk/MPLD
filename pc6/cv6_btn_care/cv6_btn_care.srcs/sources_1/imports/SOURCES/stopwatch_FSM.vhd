@@ -70,25 +70,25 @@ BEGIN
   comb_part_2: process (pres_state) begin
 
     case pres_state is
-      when st_Idle   => s_disp_enable = '1';
-                        s_cnt_enable  = '0';
-                        s_cnt_reset   = '1';
+      when st_Idle   => s_disp_enable <= '1';
+                        s_cnt_enable  <= '0';
+                        s_cnt_reset   <= '1';
 
-      when st_Run    => s_disp_enable = '1';
-                        s_cnt_enable  = '1';
-                        s_cnt_reset   = '0';
+      when st_Run    => s_disp_enable <= '1';
+                        s_cnt_enable  <= '1';
+                        s_cnt_reset   <= '0';
 
-      when st_Lap    => s_disp_enable = '0';
-                        s_cnt_enable  = '1';
-                        s_cnt_reset   = '0';
+      when st_Lap    => s_disp_enable <= '0';
+                        s_cnt_enable  <= '1';
+                        s_cnt_reset   <= '0';
 
-      when Refresh   => s_disp_enable = '1';
-                        s_cnt_enable  = '1';
-                        s_cnt_reset   = '0';
+      when st_Refresh=> s_disp_enable <= '1';
+                        s_cnt_enable  <= '1';
+                        s_cnt_reset   <= '0';
 
-      when st_Stop   => s_disp_enable = '1';
-                        s_cnt_enable  = '0';
-                        s_cnt_reset   = '0';
+      when st_Stop   => s_disp_enable <= '1';
+                        s_cnt_enable  <= '0';
+                        s_cnt_reset   <= '0';
     end case;
 
   end process comb_part_2;
