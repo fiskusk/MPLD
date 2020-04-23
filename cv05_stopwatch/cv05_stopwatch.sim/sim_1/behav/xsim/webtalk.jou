@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Webtalk v2019.2 (64-bit)
+# SW Build 2708876 on Wed Nov  6 21:40:23 MST 2019
+# IP Build 2700528 on Thu Nov  7 00:09:20 MST 2019
+# Start of session at: Mon Apr 20 07:49:59 2020
+# Process ID: 25076
+# Current directory: G:/Mùj disk/Documents/_škola/magistr/2.rucnik/MPLD/cvika/cv05/cv05_stopwatch/cv05_stopwatch.sim/sim_1/behav/xsim
+# Command line: wbtcv.exe -mode batch -source G:/Mùj disk/Documents/_škola/magistr/2.rucnik/MPLD/cvika/cv05/cv05_stopwatch/cv05_stopwatch.sim/sim_1/behav/xsim/xsim.dir/TB_stopwatch_behav/webtalk/xsim_webtalk.tcl -notrace
+# Log file: G:/Mùj disk/Documents/_škola/magistr/2.rucnik/MPLD/cvika/cv05/cv05_stopwatch/cv05_stopwatch.sim/sim_1/behav/xsim/webtalk.log
+# Journal file: G:/Mùj disk/Documents/_škola/magistr/2.rucnik/MPLD/cvika/cv05/cv05_stopwatch/cv05_stopwatch.sim/sim_1/behav/xsim\webtalk.jou
+#-----------------------------------------------------------
+source G:/Mùj -notrace

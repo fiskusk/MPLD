@@ -1,0 +1,14 @@
+#-----------------------------------------------------------
+# Vivado v2019.2 (64-bit)
+# SW Build 2708876 on Wed Nov  6 21:40:23 MST 2019
+# IP Build 2700528 on Thu Nov  7 00:09:20 MST 2019
+# Start of session at: Thu Apr 23 20:20:27 2020
+# Process ID: 8608
+# Current directory: c:/Users/Uzivatel/Documents/_skola/MPLD/cv05_stopwatch
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent32620 C:\Users\Uzivatel\Documents\_skola\MPLD\cv05_stopwatch\cv05_stopwatch.xpr
+# Log file: c:/Users/Uzivatel/Documents/_skola/MPLD/cv05_stopwatch/vivado.log
+# Journal file: c:/Users/Uzivatel/Documents/_skola/MPLD/cv05_stopwatch\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project C:/Users/Uzivatel/Documents/_skola/MPLD/cv05_stopwatch/cv05_stopwatch.xpr
+uupdate_compile_order -fileset sources_1

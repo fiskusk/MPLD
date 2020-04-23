@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2019.2.1 (64-bit)
+# SW Build 2729669 on Thu Dec  5 04:49:17 MST 2019
+# IP Build 2729494 on Thu Dec  5 07:38:25 MST 2019
+# Start of session at: Tue Mar  3 14:41:31 2020
+# Process ID: 14216
+# Current directory: D:/Documents/xklapi02/cv05_stopwatch/cv05_stopwatch.runs/impl_1
+# Command line: vivado.exe -log TOP_stopwatch.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source TOP_stopwatch.tcl -notrace
+# Log file: D:/Documents/xklapi02/cv05_stopwatch/cv05_stopwatch.runs/impl_1/TOP_stopwatch.vdi
+# Journal file: D:/Documents/xklapi02/cv05_stopwatch/cv05_stopwatch.runs/impl_1\vivado.jou
+#-----------------------------------------------------------
+source TOP_stopwatch.tcl -notrace

@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Webtalk v2019.2 (64-bit)
+# SW Build 2708876 on Wed Nov  6 21:40:23 MST 2019
+# IP Build 2700528 on Thu Nov  7 00:09:20 MST 2019
+# Start of session at: Thu Apr 23 18:46:49 2020
+# Process ID: 20592
+# Current directory: C:/Users/Uzivatel/Documents/_skola/MPLD/pc6/cv6_btn_care/cv6_btn_care.sim/sim_3/behav/xsim
+# Command line: wbtcv.exe -mode batch -source C:/Users/Uzivatel/Documents/_skola/MPLD/pc6/cv6_btn_care/cv6_btn_care.sim/sim_3/behav/xsim/xsim.dir/TB_TOP_behav/webtalk/xsim_webtalk.tcl -notrace
+# Log file: C:/Users/Uzivatel/Documents/_skola/MPLD/pc6/cv6_btn_care/cv6_btn_care.sim/sim_3/behav/xsim/webtalk.log
+# Journal file: C:/Users/Uzivatel/Documents/_skola/MPLD/pc6/cv6_btn_care/cv6_btn_care.sim/sim_3/behav/xsim\webtalk.jou
+#-----------------------------------------------------------
+source C:/Users/Uzivatel/Documents/_skola/MPLD/pc6/cv6_btn_care/cv6_btn_care.sim/sim_3/behav/xsim/xsim.dir/TB_TOP_behav/webtalk/xsim_webtalk.tcl -notrace

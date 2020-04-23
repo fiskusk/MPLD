@@ -1,0 +1,7 @@
+# compile vhdl design source files
+vhdl xil_defaultlib  \
+"../../../../cv6_btn_care.srcs/sources_1/imports/SOURCES/stopwatch_FSM.vhd" \
+"../../../../cv6_btn_care.srcs/sources_1/imports/SOURCES/TB_stopwatch_FSM.vhd" \
+
+# Do not sort compile order
+nosort

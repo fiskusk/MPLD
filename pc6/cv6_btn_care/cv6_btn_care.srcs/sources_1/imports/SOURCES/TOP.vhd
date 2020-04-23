@@ -150,7 +150,7 @@ BEGIN
   gen_btn_in : FOR i IN 0 TO 1 GENERATE
     btn_in_inst: btn_in 
     GENERIC MAP(
-      DEB_PERIOD      => 10
+      DEB_PERIOD      => 2
     )
     PORT MAP(
       clk           => clk,
