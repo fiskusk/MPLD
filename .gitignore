@@ -84,6 +84,11 @@
 !*.elf
 !*.bmm
 !*.xmp
+
+########
+# my ignore settings
+########
+*.xml
 *.xpr
 *.wcfg
 *.pb
@@ -91,3 +96,5 @@
 *.mem
 *\xsim_1.c
 *.tcl
+*.prj
+*.jou
