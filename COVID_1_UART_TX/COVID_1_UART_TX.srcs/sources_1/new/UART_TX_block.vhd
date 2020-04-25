@@ -9,7 +9,8 @@ entity UART_TX_block is
            UART_clk_en    : in STD_LOGIC;
            UART_data_in   : in STD_LOGIC_VECTOR (7 downto 0);
            clk            : in STD_LOGIC;
-           UART_data_out  : out STD_LOGIC);
+           UART_data_out  : out STD_LOGIC;
+           UART_Tx_busy   : out STD_LOGIC);
 end UART_TX_block;
 
 --------------------------------------------------------------------------------
@@ -22,8 +23,9 @@ architecture Behavioral of UART_TX_block is
   signal pres_st          : t_st_UART := st_idle;
   signal next_st          : t_st_UART;
 
-  signal Tx_data_COMB     : STD_LOGIC;
-  signal Tx_data_REG      : STD_LOGIC := '1';
+  signal s_Tx_data_COMB     : STD_LOGIC;
+  signal s_Tx_data_REG      : STD_LOGIC := '1';
+  signal s_Tx_busy          : STD_LOGIC := '0';
 
 --------------------------------------------------------------------------------
 begin
@@ -72,20 +74,31 @@ begin
   end process state_register;
 
   -- output logic
-  output_logic: process (pres_st, UART_data_in) begin
+  output_logic: process (pres_st) begin
 
     case pres_st is
-      when st_idle      =>  Tx_data_COMB <= '1';
-      when st_start_b   =>  Tx_data_COMB <= '0';
-      when st_bit_0     =>  Tx_data_COMB <= UART_data_in(0);
-      when st_bit_1     =>  Tx_data_COMB <= UART_data_in(1);
-      when st_bit_2     =>  Tx_data_COMB <= UART_data_in(2);
-      when st_bit_3     =>  Tx_data_COMB <= UART_data_in(3);
-      when st_bit_4     =>  Tx_data_COMB <= UART_data_in(4);
-      when st_bit_5     =>  Tx_data_COMB <= UART_data_in(5);
-      when st_bit_6     =>  Tx_data_COMB <= UART_data_in(6);
-      when st_bit_7     =>  Tx_data_COMB <= UART_data_in(7);
-      when st_stop      =>  Tx_data_COMB <= '1';
+      when st_idle      =>  s_Tx_data_COMB <= '1';
+                            s_Tx_busy      <= '0';
+      when st_start_b   =>  s_Tx_data_COMB <= '0';
+                            s_Tx_busy      <= '1';
+      when st_bit_0     =>  s_Tx_data_COMB <= UART_data_in(0);
+                            s_Tx_busy      <= '1';
+      when st_bit_1     =>  s_Tx_data_COMB <= UART_data_in(1);
+                            s_Tx_busy      <= '1';
+      when st_bit_2     =>  s_Tx_data_COMB <= UART_data_in(2);
+                            s_Tx_busy      <= '1';
+      when st_bit_3     =>  s_Tx_data_COMB <= UART_data_in(3);
+                            s_Tx_busy      <= '1';
+      when st_bit_4     =>  s_Tx_data_COMB <= UART_data_in(4);
+                            s_Tx_busy      <= '1';
+      when st_bit_5     =>  s_Tx_data_COMB <= UART_data_in(5);
+                            s_Tx_busy      <= '1';
+      when st_bit_6     =>  s_Tx_data_COMB <= UART_data_in(6);
+                            s_Tx_busy      <= '1';
+      when st_bit_7     =>  s_Tx_data_COMB <= UART_data_in(7);
+                            s_Tx_busy      <= '1';
+      when st_stop      =>  s_Tx_data_COMB <= '1';
+                            s_Tx_busy      <= '1';
     end case;
 
   end process output_logic;
@@ -94,11 +107,12 @@ begin
   output_register: process (clk) begin
 
     if rising_edge(clk) then
-        Tx_data_REG <= Tx_data_COMB;
+        s_Tx_data_REG <= s_Tx_data_COMB;
     end if;
 
   end process output_register;
 
-  UART_data_out <= Tx_data_REG;
+  UART_data_out <= s_Tx_data_REG;
+  UART_Tx_busy  <= s_Tx_busy;
 
 end Behavioral;

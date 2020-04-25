@@ -16,7 +16,8 @@ architecture Behavioral of TB_UART_TX_block is
            UART_clk_en    : in STD_LOGIC;
            UART_data_in   : in STD_LOGIC_VECTOR (7 downto 0);
            clk            : in STD_LOGIC;
-           UART_data_out  : out STD_LOGIC);
+           UART_data_out  : out STD_LOGIC;
+           UART_Tx_busy   : out STD_LOGIC);
   end component;
 
   component ce_gen
@@ -41,6 +42,7 @@ architecture Behavioral of TB_UART_TX_block is
 
   -- UUT outputs
   signal UART_data_out      : STD_LOGIC;
+  signal UART_Tx_busy       : STD_LOGIC;
   
   signal simulation_finished : BOOLEAN := false;
 
@@ -65,7 +67,8 @@ begin
     UART_clk_en         => UART_clk_en,
     UART_data_in        => UART_data_in,
     clk                 => clk,
-    UART_data_out       => UART_data_out
+    UART_data_out       => UART_data_out,
+    UART_Tx_busy        => UART_Tx_busy
   );
 
   --------------------------------------------------------------------------------
@@ -99,7 +102,7 @@ begin
     WAIT FOR 20ns;
 
     UART_Tx_start <= '0';
-    WAIT FOR 200us;
+    WAIT UNTIL UART_Tx_busy = '0';
     
     UART_Tx_start <= '1';
     UART_data_in <= "11001010";
