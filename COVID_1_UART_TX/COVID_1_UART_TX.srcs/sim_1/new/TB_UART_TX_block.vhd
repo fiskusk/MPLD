@@ -26,7 +26,6 @@ architecture Behavioral of TB_UART_TX_block is
   PORT (
     clk             : IN  STD_LOGIC;
     srst            : IN  STD_LOGIC;
-    ce              : IN  STD_LOGIC;
     ce_o            : OUT STD_LOGIC);
   end component;
 
@@ -57,7 +56,6 @@ begin
   PORT MAP(
     clk                 => clk,
     srst                => '0',
-    ce                  => '1',
     ce_o                => UART_clk_en
   );
 
