@@ -5,12 +5,17 @@ use IEEE.STD_LOGIC_1164.ALL;
 
 ----------------------------------------------------------------------------------
 entity TOP is
-  generic ( tap1    : integer := 16;
-            tap2    : integer := 13);
-  Port ( clk     : in STD_LOGIC;
-         ce      : in STD_LOGIC;
-         rst     : in STD_LOGIC;
-         output  : out STD_LOGIC_VECTOR(7 downto 0));
+  generic ( 
+    tap1    : integer := 16;
+    tap2    : integer := 13
+  );
+  Port (
+    clk     : in STD_LOGIC;
+    ce      : in STD_LOGIC;
+    srst    : in STD_LOGIC;
+    output  : out STD_LOGIC_VECTOR(7 downto 0);
+    LSFR_o  : out STD_LOGIC_VECTOR(tap1 downto 1)
+  );
 end TOP;
 
 ----------------------------------------------------------------------------------
@@ -26,11 +31,17 @@ begin
 
 LSFR: process (clk) begin
   if rising_edge(clk) then
-    shreg <= shreg(shreg'high-1 downto 1) & feedback;
+    if (srst = '1') then
+      shreg <= (others => '1');
+    elsif (ce = '1') then
+      shreg <= shreg(shreg'high-1 downto 1) & feedback;
+    end if;
   end if;
 end process LSFR;
 
 feedback  <= shreg(tap1) XOR shreg(tap2);
+
+LSFR_o    <= shreg;
 
 output(0) <= shreg(12);
 output(1) <= shreg(6);
